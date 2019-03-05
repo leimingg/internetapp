@@ -1,0 +1,47 @@
+.description_section{
+	background-color: darkgray;
+}
+
+p {
+	padding: 5px 25px 25px 25px;
+	height: 700px;
+	overflow: auto;
+}
+
+.container {
+	width: 100%;
+	padding-right: 30px;
+	padding-left: 30px;
+}
+
+.navbar-brand h1 { 
+  font-family: 'Lora', serif;
+  color: darkgoldenrod;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgb(232, 13, 82);
+  margin-top: 0;
+  line-height: .75;
+  font-size: 188%;
+}
+
+#head-title {
+  font-size: 200%;
+  padding-top: 6px;
+  font-weight: bold;
+}
+
+#chicken-description,#beef-description,#sushi-description{
+	padding-top:15px;
+}
+
+@media (max-width: 767px) { 
+	#collapsible-nav {
+		background-color: #b7ebd9;
+	}
+	.container {
+		padding-top: 30px;
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+}
