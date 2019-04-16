@@ -1,0 +1,27 @@
+<!--"Nothing found" will be displayed if nothing is found-->
+<div class="error" ng-if="foundItems.length==0">Nothing Found!</div>
+
+<h3>Found {{ foundItems.length }} Item(s) Based on Your Input</h3>
+<table class="table table-bordered table-striped">
+    <thead>
+	    <tr>
+	        <th>Number</th>
+	        <th>Name</th>
+	        <th>Description</th>
+	        <th>Option</th>
+	    </tr>
+    </thead>
+    <tbody>
+    <!-- display the items that match user's input -->
+    <tr ng-repeat="item in foundItems">
+        <td>{{ $index+1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td>
+            <button class="btn btn-danger" ng-click="onRemove({index: $index})">
+                Don't want this one!
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
