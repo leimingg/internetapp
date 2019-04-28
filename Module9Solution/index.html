@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Menu</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+  		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	
+	<body ng-app='MenuApp'>
+		<h2>Welcome to SuperA Restaurant!</h2>
+		<ui-view></ui-view>
+		
+		<script src="lib/angular.min.js"></script>
+		<script src="lib/angular-ui-router.min.js">	</script>
+		
+		
+		<script src="js/menuapp.module.js" ></script>
+		<script src="js/data.module.js" ></script>
+		
+		<script src="js/routes.js"></script>
+		<script src="js/menudata.service.js" ></script>
+		
+		<script src="js/categoryItems.controller.js"></script>
+		<script src="js/categories.controller.js"></script>
+
+		
+		<script src="js/categories.component.js" ></script>
+		<script src="js/items.component.js" ></script>
+		
+	</body>
+</html>
