@@ -1,0 +1,29 @@
+<div class="col-md-12 col-sm-6 col-xs-12" ng-if="myInfoCtrl.hasUser()">
+	<h3>Your Information:</h3>
+	First Name:
+  <div>{{myInfoCtrl.firstName}}</div> <br>
+  
+  Last Name:
+  <div>{{myInfoCtrl.lastName}}</div> <br>
+  
+  Email:
+  <div>{{myInfoCtrl.email}}</div> <br>
+  
+  Phone:
+  <div>{{myInfoCtrl.phone}} </div><br>
+  
+  Favorite Menu Item#:
+  <br>
+  {{myInfoCtrl.favorite.name}}
+  <br>
+  Description: {{myInfoCtrl.favorite.description}}
+  <div></div><br>
+  <img class="img-responsive" width="265" height="165"
+    ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.favorite.short_name}}.jpg" 
+    alt="{{myInfoCtrl.favorite.name}}">
+</div>
+
+<div ng-if="myInfoCtrl.userNotExit()">
+  You Have Not Signed Up Yet.
+  <a ui-sref="public.signup">Sign up Now!</a>
+</div>

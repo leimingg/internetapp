@@ -1,0 +1,48 @@
+<form class="col-md-12 col-sm-6 col-xs-12" name="signupForm" novalidate>
+	<h3>Reminder: Everything in this form will be validated. "Sign Up" button will be clickable only if all fields are validated. Correct Format of each field has been given!</h3>
+	<div>
+		First Name(e.g.Michael):<br>
+	  <input type="text" name="firstname" ng-model="signUpCtrl.firstName" placeholder="Enter First Name" required minlength="2">
+	  <span
+      ng-if="signupForm.firstname.$touched && (signupForm.firstname.$error.minlength || signupForm.firstname.$error.required) ">
+      Please Enter Your First Name! 
+    </span>
+    <br>
+
+	  Last Name(e.g.Wang):<br>
+	  <input type="text" name="lastname" ng-model="signUpCtrl.lastName" placeholder="Enter Last Name" required minlength="2">
+	  <span
+      ng-if="signupForm.lastname.$touched &&(signupForm.lastname.$error.minlength || signupForm.lastname.$error.required)">
+      Please Enter Your Last Name! 
+    </span>
+    <br>
+
+	  Email Address(e.g.123@gmail.com):<br>
+	  <input type="text" name="email" ng-model="signUpCtrl.email" placeholder="xxx@domain.com" required>
+	  <span ng-if="signupForm.email.$touched &&signupForm.email.$invalid ">
+      Valid Email Format: xxx@domain.com
+    </span>
+    <br>
+
+	  Phone(e.g.123-456-7890):<br>
+	  <input type="text" name="phone" ng-model="signUpCtrl.phone" placeholder="Phone ###-###-####" pattern="(\d{3})-(\d{3})-(\d{4})" required>
+	  <span ng-if="regForm.phone.$touched &&signupForm.phone.$invalid ">
+      Valid Phone format ###-###-####.
+    </span>
+    <br>
+	  
+	  Favorite dish Menu Number(e.g.A1,B2...):<br>
+	  <input type="text" ng-model="signUpCtrl.favorite" placeholder="Favorite Dish" ng-change="signUpCtrl.validateItemExist()">
+	  <span ng-if="signUpCtrl.checkItem()">
+		  No such menu number exists	
+    </span>
+    <br>
+    <br>
+
+	  <button ng-disabled="signupForm.$invalid" ng-click="signUpCtrl.signUp();">Sign Up</button>
+	</div>
+</form>
+<br>
+<div ng-if="signUpCtrl.checkUser()">
+  Sign up successfully! We received your information.
+</div>
